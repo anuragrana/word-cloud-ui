@@ -18,4 +18,5 @@ Install pip on windows machine:
 https://stackoverflow.com/questions/4750806/how-can-i-install-pip-on-windows
 
  
-
+If exception module not found error due to docx module:  
+https://stackoverflow.com/questions/22765313/when-import-docx-in-python3-3-i-have-error-importerror-no-module-named-excepti

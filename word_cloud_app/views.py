@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from wordcloud import WordCloud
-import os
-from tempfile import gettempdir
+import docx
 from datetime import datetime
 from collections import Counter
 from django.conf import settings
@@ -44,10 +43,25 @@ def home(request):
             data['error_message'] = 'File not uploaded'
 
         uploaded_file = request.FILES['text_file']
-        file_data = uploaded_file.read().decode("utf-8")
+
+        file_data = ""
+
+        if uploaded_file.name.endswith('docx') or uploaded_file.name.endswith('doc'):
+            doc = docx.Document(uploaded_file)
+            full_text = []
+            for para in doc.paragraphs:
+                full_text.append(para.text)
+            file_data = '\n'.join(full_text)
+        else:
+            file_data = uploaded_file.read().decode("utf-8")
+
         file_data = file_data.replace("\n", " ")
         file_data = file_data.replace(",", "")
         file_data = file_data.replace(".", "")
+
+        if not file_data:
+            data['error_message'] = 'No significant data in file'
+            return render(request, 'word_cloud_app/home.html', data)
 
         words = file_data.split(" ")
 
@@ -56,7 +70,7 @@ def home(request):
         counter = Counter(new_words)
         frequencies = dict(counter)
 
-        print(counter.most_common(10))
+        # print(counter.most_common(10))
         data['common_words'] = counter.most_common(10)
 
         word_cloud = WordCloud(
