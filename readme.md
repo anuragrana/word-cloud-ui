@@ -1,4 +1,4 @@
-How to setup on your local machine.
+#### How to setup on your local machine.
 
 - Clone the git repository anywhere on your system.  
 - Install the [virtual environment](https://pythoncircle.com/post/404/virtual-environment-in-python-a-pocket-guide/)
@@ -8,3 +8,14 @@ How to setup on your local machine.
 - Start the web-app on any empty port using command `python manage.py runserver 8888` where 8888 is the port.
 - Open browser and go to localhost:8888
 - Upload any text file containing and image will be displayed.
+
+---
+##### References:
+How to setup Python, pip and virtual environment on Windows 10:   
+https://timmyreilly.azurewebsites.net/python-pip-virtualenv-installation-on-windows/
+
+Install pip on windows machine:  
+https://stackoverflow.com/questions/4750806/how-can-i-install-pip-on-windows
+
+ 
+
