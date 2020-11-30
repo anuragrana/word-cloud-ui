@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generating word cloud</title>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body style="padding:20px;">
+{% load staticfiles %}
+
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            {{ error_message }}
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" class="form-control" name="text_file" required="true"><br>
+                <input type="submit" value="Upload" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+Word Cloud Image: <br><br>
+
+<img src="{{ media_url }}{{imagename}}">
+
+<hr>
+Top 10 words:<br><br>
+{% for i in common_words %}
+{{i.0}} - {{i.1}}<br>
+{% endfor %}
+
+</body>
+</html>
