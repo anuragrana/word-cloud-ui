@@ -9,7 +9,7 @@ This single page Django web application lets you upload the text or docx file an
 #### How to setup on your local machine.
 
 - Clone the git repository anywhere on your system.  
-- Install the [virtual environment](https://pythoncircle.com/post/404/virtual-environment-in-python-a-pocket-guide/)
+- Install the [virtual environment](https://pythoncircle.com/post/404/virtual-environment-in-python-a-pocket-guide/) (Highly recommended)
 - Activate the virtual environment using command `source path-to-venv-folder/bin/activate`
 - CD to the folder where code was placed from git repository.
 - Install all the dependencies using command `pip install -r requirements.txt`
@@ -19,6 +19,12 @@ This single page Django web application lets you upload the text or docx file an
 
 ---
 ##### References:
+Virtual Environment:  
+https://pythoncircle.com/post/404/virtual-environment-in-python-a-pocket-guide/
+
+Hosting web application on PythonAnyWhere for free:  
+https://pythoncircle.com/post/18/how-to-host-django-app-on-pythonanywhere-for-free/
+
 How to setup Python, pip and virtual environment on Windows 10:   
 https://timmyreilly.azurewebsites.net/python-pip-virtualenv-installation-on-windows/
 
