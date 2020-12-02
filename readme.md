@@ -1,3 +1,11 @@
+![word cloud image](wordcloud.png)
+
+
+This single page Django web application lets you upload the text or docx file and generates the word cloud image from the text content in uploaded file.  
+
+
+
+
 #### How to setup on your local machine.
 
 - Clone the git repository anywhere on your system.  
